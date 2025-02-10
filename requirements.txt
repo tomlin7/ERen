@@ -3,3 +3,4 @@ graphviz
 langchain
 langchain-google-genai
 pydantic
+python-dotenv
