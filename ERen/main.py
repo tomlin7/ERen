@@ -2,7 +2,7 @@ import streamlit as st
 from chain import CHAIN
 from constants import *
 
-st.title("ERen - DBMS ERD Generator!")
+st.title("ERen - ER diagrams in seconds!")
 st.write(
     "ChatGPT (or similar) fails to generate proper ER diagrams, ERen solves this issue!"
 )
