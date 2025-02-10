@@ -1,3 +1,4 @@
+import graphviz
 import streamlit as st
 from chain import CHAIN
 from constants import *
@@ -22,7 +23,15 @@ if st.button("Generate Diagram and SQL"):
 
             if dot_code:
                 st.subheader("ER Diagram:")
-                st.graphviz_chart(dot_code, use_container_width=True)
+                # st.graphviz_chart(dot_code, use_container_width=True)
+
+                graph = graphviz.Source(dot_code)
+                svg_content = graph.pipe(format="svg").decode("utf-8")
+                st.image(
+                    svg_content,
+                    use_container_width=True,
+                    caption="long press to save image",
+                )
             else:
                 st.error("Failed to generate ER diagram.")
 
